@@ -314,7 +314,7 @@
       <section class="vaults" id="vaults" aria-labelledby="vaults-title">
         <h2 id="vaults-title" class="section-title">VIP VAULT ROOMS</h2>
         <p class="section-kicker">
-          CORE $15/MO // ELITE VIP $25/MO. UNLOCK THE ROOM. PICK THE FILE. HOLD.
+          CORE $15/MO // ELITE VIP $25/MO. FEED. NEWEST FIRST. PICK THE FILE. HOLD.
         </p>
 
         <div class="vault-grid">
@@ -323,8 +323,9 @@
               <p class="vault__badge">CORE ADDICT // $15</p>
               <h3 class="vault__name">CORE VAULT</h3>
               <p class="vault__copy">
-                133 weekly-dose masters. Select a file. The idle poster is a
-                future teaser loop of that file — not the master.
+                Weekly-dose masters. Newest files first. Select a file. The
+                idle poster is a future teaser loop of that file — not the
+                master.
               </p>
             </header>
             <div class="vault__gate">
@@ -353,8 +354,8 @@
                 <p class="vault__now" id="core-now">SELECT A FILE</p>
               </div>
               <div class="vault__rail">
-                <p class="vault__rail-label">EPISODE INDEX</p>
-                <div class="vault__list" id="core-list" role="list" aria-label="Core episodes"></div>
+                <p class="vault__rail-label">CORE FEED</p>
+                <div class="vault__list" id="core-list" role="list" aria-label="Core feed"></div>
               </div>
             </div>
           </article>
@@ -364,7 +365,7 @@
               <p class="vault__badge">ELITE BREAKER // $25</p>
               <h3 class="vault__name">ELITE VIP VAULT</h3>
               <p class="vault__copy">
-                79 descent holds and event packs. 4K-class files. Idle poster
+                Descent holds and event packs. Newest files first. Idle poster
                 is a future teaser loop of that file — not the master.
               </p>
             </header>
@@ -416,8 +417,8 @@
                 </div>
               </div>
               <div class="vault__rail">
-                <p class="vault__rail-label">EPISODE INDEX</p>
-                <div class="vault__list" id="elite-list" role="list" aria-label="Elite episodes"></div>
+                <p class="vault__rail-label">ELITE FEED</p>
+                <div class="vault__list" id="elite-list" role="list" aria-label="Elite feed"></div>
               </div>
             </div>
           </article>
@@ -852,11 +853,19 @@
           room.video.play().catch(function () {});
         }
 
+        function newestFirst(episodes) {
+          return (episodes || []).slice().sort(function (a, b) {
+            return (parseInt(b.id, 10) || 0) - (parseInt(a.id, 10) || 0);
+          });
+        }
+
         function renderList(tier, episodes) {
           const room = rooms[tier];
           if (!room || !room.list) return;
+          episodes = newestFirst(episodes);
           room.list.innerHTML = "";
           room.list.dataset.tier = tier;
+          if (episodes[0]) posterFor(room.root, episodes[0]);
           episodes.forEach(function (episode, index) {
             const button = document.createElement("button");
             button.type = "button";
@@ -881,7 +890,10 @@
           const label = room.root.querySelector(".vault__rail-label");
           if (label) {
             label.textContent =
-              "EPISODE INDEX // " + episodes.length + " FILES // SCROLL";
+              (tier === "elite" ? "ELITE FEED" : "CORE FEED") +
+              " // " +
+              episodes.length +
+              " FILES // NEWEST FIRST";
           }
         }
 
@@ -1049,7 +1061,7 @@
 
         restore();
 
-        fetch("vault_catalog.json")
+        fetch("vault_catalog.json?v=feed-134")
           .then(function (response) {
             if (!response.ok) throw new Error("catalog " + response.status);
             return response.json();
