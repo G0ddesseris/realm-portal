@@ -83,7 +83,10 @@
         />
         <span>REALM OF CHAOS // VAULT ACCESS</span>
       </a>
-      <a class="btn btn--ghost" href="#airlock">[ VERIFY TELEGRAM KEY ]</a>
+      <div class="nav__actions">
+        <a class="btn btn--ghost" href="#vaults">VAULT ROOMS</a>
+        <a class="btn btn--ghost" href="#airlock">REALM PASS</a>
+      </div>
     </header>
 
     <main id="top">
@@ -137,8 +140,8 @@
           </li>
           <li class="step">
             <span class="step__index">03</span>
-            <h3>Receive Timeless Key</h3>
-            <p>Instant Telegram VIP Vault link. Single-use. Airlocked.</p>
+            <h3>Take Your Realm Pass</h3>
+            <p>This is the pass into the Realms of Chaos. The sanctuary opens.</p>
           </li>
         </ol>
       </section>
@@ -168,7 +171,7 @@
                 href="https://www.patreon.com/checkout/Realm0fChaos?rid=26725413"
                 target="_blank"
                 rel="noopener noreferrer"
-                >[ BECOME INITIATE ]</a
+                >BECOME INITIATE</a>
               >
             </div>
           </article>
@@ -194,7 +197,7 @@
                 href="https://www.patreon.com/checkout/Realm0fChaos?rid=26725428"
                 target="_blank"
                 rel="noopener noreferrer"
-                >[ CLAIM CORE ACCESS ]</a
+                >CLAIM CORE ACCESS</a>
               >
             </div>
           </article>
@@ -218,7 +221,7 @@
                 href="https://www.patreon.com/checkout/Realm0fChaos?rid=26725442"
                 target="_blank"
                 rel="noopener noreferrer"
-                >[ ENTER THE DESCENT ]</a
+                >ENTER THE DESCENT</a>
               >
             </div>
           </article>
@@ -245,7 +248,7 @@
                 href="https://www.patreon.com/checkout/Realm0fChaos?rid=26725449"
                 target="_blank"
                 rel="noopener noreferrer"
-                >[ SUBMIT CONFESSION ]</a
+                >SUBMIT CONFESSION</a>
               >
             </div>
           </article>
@@ -274,7 +277,7 @@
                 href="https://www.patreon.com/checkout/Realm0fChaos?rid=28546520"
                 target="_blank"
                 rel="noopener noreferrer"
-                >[ PAY TRIBUTE ]</a
+                >PAY TRIBUTE</a
               >
             </div>
           </article>
@@ -283,11 +286,12 @@
 
       <section class="airlock" id="airlock" aria-labelledby="airlock-title">
         <div class="airlock__panel">
-          <h2 id="airlock-title">TELEGRAM KEY VERIFICATION</h2>
+          <p class="eyebrow">SANCTUARY GATE // ENTER THE REALM</p>
+          <h2 id="airlock-title">REALM PASS</h2>
           <p>
-            Already subscribed on Patreon or Direct Web Checkout? Enter your
-            email or Web Order ID below to verify your active key and receive
-            your single-use Telegram VIP link.
+            This is the pass into the Realms of Chaos. Already on Patreon or
+            Direct Web Checkout? Enter the email the sanctuary knows. The vault
+            opens at once.
           </p>
           <form class="verify-form" id="airlock-form" action="#" method="post">
             <label class="sr-only" for="verify-key">Email or Web Order ID</label>
@@ -300,12 +304,154 @@
               required
             />
             <button class="btn btn--primary" id="airlock-submit" type="submit">
-              [ VERIFY &amp; CLAIM TELEGRAM KEY ]
+              CLAIM YOUR REALM PASS
             </button>
           </form>
           <div class="airlock-result" id="airlock-result" aria-live="polite"></div>
         </div>
       </section>
+
+      <section class="vaults" id="vaults" aria-labelledby="vaults-title">
+        <h2 id="vaults-title" class="section-title">VIP VAULT ROOMS</h2>
+        <p class="section-kicker">
+          CORE $15/MO // ELITE VIP $25/MO. UNLOCK THE ROOM. PICK THE FILE. HOLD.
+        </p>
+
+        <div class="vault-grid">
+          <article class="vault" id="core-vault" data-vault="core">
+            <header class="vault__head">
+              <p class="vault__badge">CORE ADDICT // $15</p>
+              <h3 class="vault__name">CORE VAULT</h3>
+              <p class="vault__copy">
+                133 weekly-dose masters. Select a file. The idle poster is a
+                future teaser loop of that file — not the master.
+              </p>
+            </header>
+            <div class="vault__gate">
+              <p class="vault__lock">AIRLOCKED</p>
+              <p class="vault__lock-hint">THE REALM PASS OPENS THE SANCTUARY</p>
+              <button class="btn btn--primary vault__enter" type="button" data-unlock="core">
+                ENTER CORE VAULT
+              </button>
+            </div>
+            <div class="vault__stage">
+              <div class="vault__player">
+                <div class="vault__screen">
+                  <video
+                    class="vault__video"
+                    id="core-video"
+                    controls
+                    playsinline
+                    preload="metadata"
+                  ></video>
+                  <!-- FUTURE PRODUCTION: idle poster becomes a muted teaser loop of THIS episode from /teasers/core/{id}.webp|mp4. Not the master. -->
+                  <div class="vault__poster" aria-hidden="true">
+                    <span>001</span>
+                    <em>TEASER LOOP // FUTURE</em>
+                  </div>
+                </div>
+                <p class="vault__now" id="core-now">SELECT A FILE</p>
+              </div>
+              <div class="vault__rail">
+                <p class="vault__rail-label">EPISODE INDEX</p>
+                <div class="vault__list" id="core-list" role="list" aria-label="Core episodes"></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="vault vault--elite" id="elite-vault" data-vault="elite">
+            <header class="vault__head">
+              <p class="vault__badge">ELITE BREAKER // $25</p>
+              <h3 class="vault__name">ELITE VIP VAULT</h3>
+              <p class="vault__copy">
+                79 descent holds and event packs. 4K-class files. Idle poster
+                is a future teaser loop of that file — not the master.
+              </p>
+            </header>
+            <div class="vault__gate">
+              <p class="vault__lock">AIRLOCKED</p>
+              <p class="vault__lock-hint">THE REALM PASS OPENS THE SANCTUARY</p>
+              <button class="btn btn--primary vault__enter" type="button" data-unlock="elite">
+                ENTER ELITE VAULT
+              </button>
+            </div>
+            <div class="vault__stage">
+              <div class="vault__player">
+                <div class="vault__screen">
+                  <video
+                    class="vault__video"
+                    id="elite-video"
+                    controls
+                    playsinline
+                    preload="metadata"
+                  ></video>
+                  <!-- FUTURE PRODUCTION: idle poster becomes a muted teaser loop of THIS episode from /teasers/elite/{id}.webp|mp4. Not the master. -->
+                  <div class="vault__poster" aria-hidden="true">
+                    <span>001</span>
+                    <em>TEASER LOOP // FUTURE</em>
+                  </div>
+                </div>
+                <p class="vault__now" id="elite-now">SELECT A FILE</p>
+                <div class="vault__teaser" id="elite-teaser">
+                  <div class="vault__padlock" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="42" height="42">
+                      <path
+                        fill="currentColor"
+                        d="M17 8h-1V6a4 4 0 0 0-8 0v2H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2zm-7-2a2 2 0 1 1 4 0v2h-4V6zm3 11.2a2.2 2.2 0 1 1 0-4.4 2.2 2.2 0 0 1 0 4.4z"
+                      />
+                    </svg>
+                  </div>
+                  <p class="vault__teaser-kicker">ELITE VIP ACCESS REQUIRED</p>
+                  <p class="vault__teaser-copy">
+                    Upgrade your Realm Pass to unlock the 79 Elite Vault Master
+                    Archives.
+                  </p>
+                  <a
+                    class="btn btn--featured"
+                    href="https://www.patreon.com/checkout/Realm0fChaos?rid=26725442"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >UPGRADE TO ELITE VIP $25</a
+                  >
+                </div>
+              </div>
+              <div class="vault__rail">
+                <p class="vault__rail-label">EPISODE INDEX</p>
+                <div class="vault__list" id="elite-list" role="list" aria-label="Elite episodes"></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <div
+        class="upsell"
+        id="elite-upsell"
+        hidden
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="elite-upsell-title"
+      >
+        <div class="upsell__glass">
+          <p class="upsell__kicker" id="elite-upsell-title">
+            ELITE VIP ACCESS REQUIRED
+          </p>
+          <p class="upsell__copy">
+            Upgrade your Realm Pass to unlock the 79 Elite Vault Master
+            Archives.
+          </p>
+          <a
+            class="btn btn--featured"
+            href="https://www.patreon.com/checkout/Realm0fChaos?rid=26725442"
+            target="_blank"
+            rel="noopener noreferrer"
+            >UPGRADE TO ELITE VIP $25</a
+          >
+          <button class="btn btn--ghost" type="button" id="elite-upsell-close">
+            RETURN TO CORE
+          </button>
+        </div>
+      </div>
     </main>
 
     <footer class="site-footer">
@@ -411,102 +557,183 @@
       (function () {
         const WEBHOOK =
           "https://hook.us2.make.com/5ln8byxwiwj7mtknejixwxsuvmf2y9ji";
-        const IDLE_LABEL = "[ VERIFY & CLAIM TELEGRAM KEY ]";
+        const IDLE_LABEL = "CLAIM YOUR REALM PASS";
         const form = document.getElementById("airlock-form");
         const input = document.getElementById("verify-key");
         const button = document.getElementById("airlock-submit");
         const result = document.getElementById("airlock-result");
         if (!form || !input || !button || !result) return;
 
+        let identityMap = {};
+        const identityReady = fetch("vault_grants.json")
+          .then(function (response) {
+            if (!response.ok) return {};
+            return response.json();
+          })
+          .then(function (data) {
+            identityMap = (data && data.members) || {};
+          })
+          .catch(function () {
+            identityMap = {};
+          });
+
+        result.addEventListener("click", function (event) {
+          const unlock = event.target.closest("[data-unlock]");
+          if (!unlock || !window.RealmVaults) return;
+          window.RealmVaults.tryEnter(unlock.getAttribute("data-unlock"));
+        });
+
         function field(payload, key) {
           if (!payload || typeof payload !== "object") return "";
-          const value = payload[key];
-          return typeof value === "string" ? value.trim() : "";
-        }
-
-        function safeHref(url) {
-          if (!url) return "";
-          try {
-            const parsed = new URL(url);
-            if (parsed.protocol === "https:" || parsed.protocol === "http:") {
-              return parsed.href;
+          const wanted = String(key).toLowerCase();
+          let value;
+          Object.keys(payload).forEach(function (name) {
+            if (name.toLowerCase() === wanted && value === undefined) {
+              value = payload[name];
             }
-          } catch (error) {
-            return "";
+          });
+          if (value == null) return "";
+          if (typeof value === "string") return value.trim();
+          if (typeof value === "number" || typeof value === "boolean") {
+            return String(value);
           }
           return "";
         }
 
-        function makeGrant(href, label) {
-          const grant = document.createElement("a");
+        function makeRoomEnter(tier, label) {
+          const grant = document.createElement("button");
+          grant.type = "button";
           grant.className = "btn btn--granted";
-          grant.href = href;
-          grant.target = "_blank";
-          grant.rel = "noopener noreferrer";
+          grant.setAttribute("data-unlock", tier);
           grant.textContent = label;
           return grant;
+        }
+
+        function hoistGrant(from, into) {
+          [
+            "status",
+            "tier",
+            "grant",
+            "plan",
+            "membership",
+            "patreon_tier",
+            "patron_status",
+            "membership_status",
+          ].forEach(function (key) {
+            if (!field(into, key) && field(from, key)) into[key] = field(from, key);
+          });
+          return into;
         }
 
         function unwrap(payload) {
           if (Array.isArray(payload)) return unwrap(payload[0]);
           if (!payload || typeof payload !== "object") return {};
-          if (
-            field(payload, "link") ||
-            field(payload, "link2") ||
-            field(payload, "core_link") ||
-            field(payload, "elite_link")
-          ) {
-            return payload;
-          }
           const nested = payload.body || payload.data || payload.response;
+          let inner = payload;
           if (typeof nested === "string") {
             try {
-              return unwrap(JSON.parse(nested));
+              inner = unwrap(JSON.parse(nested));
             } catch (error) {
-              return payload;
+              inner = payload;
             }
+          } else if (nested && typeof nested === "object" && nested !== payload) {
+            inner = unwrap(nested);
           }
-          if (nested && typeof nested === "object") return unwrap(nested);
-          return payload;
+          return hoistGrant(payload, Object.assign({}, inner));
         }
 
-        function showGrants(payload) {
+        function namedGrant(data) {
+          const raw = (
+            field(data, "tier") ||
+            field(data, "patreon_tier") ||
+            field(data, "grant") ||
+            field(data, "plan") ||
+            field(data, "membership")
+          ).toLowerCase();
+          if (!raw) return "";
+          if (raw === "both" || raw === "all") return "both";
+          if (
+            /(initiate)/.test(raw) &&
+            !/(core|elite|breaker|broken|disciple|addict)/.test(raw)
+          ) {
+            return "initiate";
+          }
+          if (/(elite|breaker|broken|disciple)/.test(raw)) return "elite";
+          if (/(core|addict)/.test(raw)) return "core";
+          return raw;
+        }
+
+        function isInactivePatron(data) {
+          const raw = (
+            field(data, "patron_status") ||
+            field(data, "membership_status") ||
+            field(data, "patron")
+          ).toLowerCase();
+          return /(inactive|former|declined|deleted|expired)/.test(raw);
+        }
+
+        function sheetRecord(email) {
+          return identityMap[String(email || "").trim().toLowerCase()] || null;
+        }
+
+        function showGrants(payload, email) {
           const data = unwrap(payload);
-          const tier = field(data, "tier").toLowerCase();
-          const coreLink = safeHref(
-            field(data, "core_link") || field(data, "link") || field(data, "url")
-          );
-          const eliteLink = safeHref(field(data, "elite_link") || field(data, "link2"));
-          const isElite = tier === "elite" || Boolean(eliteLink);
+          const rec = sheetRecord(email);
+          if (rec && rec.status === "inactive") return false;
+          if (!rec && isInactivePatron(data)) return false;
+
+          const declared = rec
+            ? namedGrant({ tier: rec.tier || "" })
+            : namedGrant(data);
+          if (declared === "initiate") {
+            if (window.RealmVaults) window.RealmVaults.reset();
+            result.innerHTML =
+              '<p class="airlock-notice">INITIATE PASS // UPGRADE TO CORE TO ENTER THE VAULT</p>';
+            return true;
+          }
+
+          let isElite = declared === "elite" || declared === "both";
+          let isCore = isElite || declared === "core";
+          if (!declared) {
+            isCore = true;
+            isElite = false;
+          }
 
           result.innerHTML = "";
 
-          if (isElite && (!coreLink || !eliteLink)) {
+          if (!isCore) {
             return false;
           }
-          if (!isElite && !coreLink) {
-            return false;
-          }
+
+          const meta = document.createElement("p");
+          meta.className = "airlock-grant-meta";
+          meta.textContent = isElite
+            ? "REALM PASS // CORE + ELITE"
+            : "REALM PASS // CORE";
 
           const stack = document.createElement("div");
           stack.className = "airlock-grants";
-
+          stack.appendChild(makeRoomEnter("core", "ENTER CORE VAULT"));
           if (isElite) {
-            stack.appendChild(makeGrant(coreLink, "[ ENTER CORE VAULT ]"));
-            stack.appendChild(makeGrant(eliteLink, "[ ENTER ELITE VIP VAULT ]"));
-          } else {
-            stack.appendChild(
-              makeGrant(coreLink, "[ ACCESS GRANTED // ENTER VIP VAULT ]")
-            );
+            stack.appendChild(makeRoomEnter("elite", "ENTER ELITE VAULT"));
           }
 
+          result.appendChild(meta);
           result.appendChild(stack);
+
+          if (window.RealmVaults) {
+            window.RealmVaults.reset();
+            window.RealmVaults.grant("core");
+            if (isElite) window.RealmVaults.grant("elite");
+            else window.RealmVaults.revoke("elite");
+            window.RealmVaults.afterVerify();
+          }
           return true;
         }
 
         function showNotice() {
           result.innerHTML =
-            '<p class="airlock-notice">[ NOTICE: EMAIL NOT FOUND IN ACTIVE LEDGER ]</p>';
+            '<p class="airlock-notice">THIS NAME IS NOT IN THE REALM</p>';
         }
 
         function resetButton() {
@@ -521,7 +748,9 @@
 
           result.innerHTML = "";
           button.disabled = true;
-          button.textContent = "[ SEARCHING VAULT LEDGER... ]";
+          button.textContent = "OPENING THE SANCTUARY...";
+          if (window.RealmVaults) window.RealmVaults.reset();
+          await identityReady;
 
           try {
             const response = await fetch(WEBHOOK, {
@@ -545,8 +774,8 @@
               : "";
             const denied = status === "error" || status === "pending" || status === "not_found";
 
-            if (response.ok && !denied && showGrants(payload)) {
-              button.textContent = "[ LEDGER MATCH CONFIRMED ]";
+            if (response.ok && !denied && showGrants(payload, email)) {
+              button.textContent = "ENTER THE REALM";
               return;
             }
 
@@ -557,6 +786,296 @@
             resetButton();
           }
         });
+      })();
+
+      window.RealmVaults = (function () {
+        const ACCESS_KEY = "roc-vault-access";
+        const rooms = {
+          core: {
+            list: document.getElementById("core-list"),
+            video: document.getElementById("core-video"),
+            now: document.getElementById("core-now"),
+            root: document.getElementById("core-vault"),
+          },
+          elite: {
+            list: document.getElementById("elite-list"),
+            video: document.getElementById("elite-video"),
+            now: document.getElementById("elite-now"),
+            root: document.getElementById("elite-vault"),
+          },
+        };
+        let pendingTier = "";
+
+        function readAccess() {
+          try {
+            const parsed = JSON.parse(sessionStorage.getItem(ACCESS_KEY) || "{}");
+            return parsed && typeof parsed === "object" ? parsed : {};
+          } catch (error) {
+            return {};
+          }
+        }
+
+        function writeAccess(access) {
+          sessionStorage.setItem(ACCESS_KEY, JSON.stringify(access));
+        }
+
+        function hasAccess(tier) {
+          return Boolean(readAccess()[tier]);
+        }
+
+        function posterFor(root, episode) {
+          const poster = root.querySelector(".vault__poster");
+          if (!poster) return;
+          const span = poster.querySelector("span");
+          if (span) span.textContent = episode.id || "000";
+        }
+
+        function playEpisode(tier, episode, button) {
+          const room = rooms[tier];
+          if (!room || !episode) return;
+          if (tier === "elite" && !hasAccess("elite")) {
+            showUpsell();
+            return;
+          }
+          room.root.querySelectorAll(".vault__ep").forEach(function (item) {
+            item.classList.remove("is-current");
+            item.setAttribute("aria-selected", "false");
+          });
+          if (button) {
+            button.classList.add("is-current");
+            button.setAttribute("aria-selected", "true");
+          }
+          room.root.classList.add("is-playing");
+          posterFor(room.root, episode);
+          room.now.textContent = episode.id + " // " + episode.title;
+          room.video.src = episode.cdn_url;
+          room.video.play().catch(function () {});
+        }
+
+        function renderList(tier, episodes) {
+          const room = rooms[tier];
+          if (!room || !room.list) return;
+          room.list.innerHTML = "";
+          room.list.dataset.tier = tier;
+          episodes.forEach(function (episode, index) {
+            const button = document.createElement("button");
+            button.type = "button";
+            button.className = "vault__ep";
+            button.dataset.index = String(index);
+            button.innerHTML =
+              '<span class="vault__thumb" aria-hidden="true">' +
+              '<span class="vault__thumb-id">' +
+              (episode.id || String(index + 1).padStart(3, "0")) +
+              "</span><em>TEASER LOOP // FUTURE</em></span>" +
+              '<span class="vault__ep-meta"><strong>' +
+              episode.title +
+              "</strong><small>" +
+              episode.file_name +
+              "</small></span>";
+            room.list.appendChild(button);
+          });
+          room.list.onclick = function (event) {
+            const button = event.target.closest(".vault__ep");
+            if (!button) return;
+            const episode = episodes[Number(button.dataset.index)];
+            playEpisode(tier, episode, button);
+          };
+          const label = room.root.querySelector(".vault__rail-label");
+          if (label) {
+            label.textContent =
+              "EPISODE INDEX // " + episodes.length + " FILES // SCROLL";
+          }
+        }
+
+        function setRoomState(tier, state) {
+          const room = rooms[tier];
+          if (!room || !room.root) return;
+          room.root.classList.remove("is-open", "is-teaser");
+          if (state === "open") {
+            room.root.classList.add("is-open");
+          }
+          if (state === "teaser") {
+            room.root.classList.add("is-open", "is-teaser");
+            stopPlayback(tier);
+          }
+        }
+
+        function stopPlayback(tier) {
+          const room = rooms[tier];
+          if (!room || !room.video) return;
+          room.video.pause();
+          room.video.removeAttribute("src");
+          room.video.load();
+          room.root.classList.remove("is-playing");
+          if (room.now) room.now.textContent = "SELECT A FILE";
+        }
+
+        function applyAccess() {
+          if (hasAccess("elite") || hasAccess("core")) {
+            setRoomState("core", "open");
+          } else {
+            setRoomState("core", "locked");
+          }
+          if (hasAccess("elite")) {
+            setRoomState("elite", "open");
+          } else {
+            setRoomState("elite", "locked");
+          }
+        }
+
+        function unlock(tier) {
+          setRoomState(tier, "open");
+        }
+
+        function reset() {
+          writeAccess({});
+          applyAccess();
+        }
+
+        function grant(tier) {
+          const access = readAccess();
+          access[tier] = true;
+          writeAccess(access);
+          applyAccess();
+        }
+
+        function revoke(tier) {
+          const access = readAccess();
+          delete access[tier];
+          writeAccess(access);
+          applyAccess();
+        }
+
+        function showUpsell() {
+          const modal = document.getElementById("elite-upsell");
+          if (!modal) return;
+          modal.hidden = false;
+          document.body.classList.add("upsell-open");
+        }
+
+        function hideUpsell() {
+          const modal = document.getElementById("elite-upsell");
+          if (!modal) return;
+          modal.hidden = true;
+          document.body.classList.remove("upsell-open");
+        }
+
+        function sendToAirlock(tier) {
+          pendingTier = tier || "";
+          const panel = document.querySelector(".airlock__panel");
+          const result = document.getElementById("airlock-result");
+          const input = document.getElementById("verify-key");
+          if (result) {
+            const label = tier === "elite" ? "ELITE VIP VAULT" : "CORE VAULT";
+            result.innerHTML =
+              '<p class="airlock-notice">A REALM PASS IS REQUIRED TO ENTER THE ' +
+              label +
+              "</p>";
+          }
+          if (panel) {
+            panel.classList.add("is-called");
+            window.setTimeout(function () {
+              panel.classList.remove("is-called");
+            }, 2400);
+          }
+          const airlock = document.getElementById("airlock");
+          if (airlock) airlock.scrollIntoView({ behavior: "smooth", block: "start" });
+          if (input) {
+            input.focus();
+            input.select();
+          }
+        }
+
+        function tryEnter(tier) {
+          const room = rooms[tier];
+          if (tier === "elite" && hasAccess("elite")) {
+            setRoomState("elite", "open");
+            if (room && room.root) {
+              room.root.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+            return;
+          }
+          if (tier === "elite" && hasAccess("core")) {
+            setRoomState("elite", "teaser");
+            if (room && room.root) {
+              room.root.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+            return;
+          }
+          if (tier === "core" && (hasAccess("core") || hasAccess("elite"))) {
+            setRoomState("core", "open");
+            if (room && room.root) {
+              room.root.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+            return;
+          }
+          sendToAirlock(tier);
+        }
+
+        function afterVerify() {
+          const wanted = pendingTier;
+          pendingTier = "";
+          applyAccess();
+          const target =
+            wanted === "elite" && rooms.elite
+              ? rooms.elite
+              : rooms.core;
+          if (target && target.root) {
+            window.setTimeout(function () {
+              target.root.scrollIntoView({ behavior: "smooth", block: "start" });
+            }, 250);
+          }
+        }
+
+        function restore() {
+          applyAccess();
+        }
+
+        document.querySelectorAll("[data-unlock]").forEach(function (button) {
+          button.addEventListener("click", function () {
+            tryEnter(button.getAttribute("data-unlock"));
+          });
+        });
+
+        const upsell = document.getElementById("elite-upsell");
+        const upsellClose = document.getElementById("elite-upsell-close");
+        if (upsellClose) upsellClose.addEventListener("click", hideUpsell);
+        if (upsell) {
+          upsell.addEventListener("click", function (event) {
+            if (event.target === upsell) hideUpsell();
+          });
+        }
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") hideUpsell();
+        });
+
+        restore();
+
+        fetch("vault_catalog.json")
+          .then(function (response) {
+            if (!response.ok) throw new Error("catalog " + response.status);
+            return response.json();
+          })
+          .then(function (catalog) {
+            renderList("core", catalog.core || []);
+            renderList("elite", catalog.elite || []);
+          })
+          .catch(function () {
+            Object.keys(rooms).forEach(function (tier) {
+              if (rooms[tier].now) {
+                rooms[tier].now.textContent = "CATALOG OFFLINE // START LOCAL SERVER";
+              }
+            });
+          });
+
+        return {
+          unlock: unlock,
+          grant: grant,
+          revoke: revoke,
+          reset: reset,
+          tryEnter: tryEnter,
+          afterVerify: afterVerify,
+        };
       })();
     </script>
   </body>
