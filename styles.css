@@ -907,8 +907,7 @@ body.upsell-open {
   letter-spacing: 0.08em;
 }
 
-.vault__poster em,
-.vault__thumb em {
+.vault__poster em {
   font-style: normal;
   font-family: var(--font-display);
   letter-spacing: 0.18em;
@@ -981,6 +980,8 @@ body.upsell-open {
   text-align: left;
   cursor: pointer;
   font: inherit;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 .vault__ep:hover,
@@ -1014,10 +1015,6 @@ body.upsell-open {
   font-family: var(--font-display);
   font-size: 0.78rem;
   letter-spacing: 0.08em;
-}
-
-.vault__thumb em {
-  display: none;
 }
 
 .vault__ep-meta {

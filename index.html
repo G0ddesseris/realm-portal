@@ -67,7 +67,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=vault-index" />
   </head>
   <body>
     <div class="ambient ambient--a" aria-hidden="true"></div>
@@ -866,12 +866,10 @@
               '<span class="vault__thumb" aria-hidden="true">' +
               '<span class="vault__thumb-id">' +
               (episode.id || String(index + 1).padStart(3, "0")) +
-              "</span><em>TEASER LOOP // FUTURE</em></span>" +
+              "</span></span>" +
               '<span class="vault__ep-meta"><strong>' +
               episode.title +
-              "</strong><small>" +
-              episode.file_name +
-              "</small></span>";
+              "</strong></span>";
             room.list.appendChild(button);
           });
           room.list.onclick = function (event) {
