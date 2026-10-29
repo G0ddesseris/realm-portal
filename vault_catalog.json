@@ -1,6 +1,6 @@
 {
   "cdn_base": "https://media.therealmsofchaos.com",
-  "generated_at": "2026-10-21T19:32:13Z",
+  "generated_at": "2026-10-29T18:02:43Z",
   "core": [
     {
       "id": "001",
@@ -939,6 +939,20 @@
       "title": "You didnt pick",
       "cdn_url": "https://media.therealmsofchaos.com/episodes/core/134_You_didnt_pick.mp4",
       "bytes": 287667596
+    },
+    {
+      "id": "135",
+      "file_name": "You Said_NNN.mp4",
+      "title": "You Said NNN",
+      "cdn_url": "https://media.therealmsofchaos.com/episodes/core/You%20Said_NNN.mp4",
+      "bytes": 121934988
+    },
+    {
+      "id": "136",
+      "file_name": "SVR.mp4",
+      "title": "SVR",
+      "cdn_url": "https://media.therealmsofchaos.com/episodes/core/SVR.mp4",
+      "bytes": 229967637
     }
   ],
   "elite": [
