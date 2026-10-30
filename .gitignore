@@ -22,4 +22,7 @@ node_modules/
 .vercel/
 .cache/
 Bunny Videos/
+# Member identity data. Emails ARE the access keys: never commit, never deploy.
 vault_grants.json
+vault_grants*.json
+*Identity Bridge*

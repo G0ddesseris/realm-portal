@@ -404,8 +404,8 @@
                   </div>
                   <p class="vault__teaser-kicker">ELITE VIP ACCESS REQUIRED</p>
                   <p class="vault__teaser-copy">
-                    Upgrade your Realm Pass to unlock the 79 Elite Vault Master
-                    Archives.
+                    Upgrade your Realm Pass to unlock the
+                    <span data-elite-count>79</span> Elite Vault Master Archives.
                   </p>
                   <a
                     class="btn btn--featured"
@@ -438,8 +438,8 @@
             ELITE VIP ACCESS REQUIRED
           </p>
           <p class="upsell__copy">
-            Upgrade your Realm Pass to unlock the 79 Elite Vault Master
-            Archives.
+            Upgrade your Realm Pass to unlock the
+            <span data-elite-count>79</span> Elite Vault Master Archives.
           </p>
           <a
             class="btn btn--featured"
@@ -559,6 +559,10 @@
         const WEBHOOK =
           "https://hook.us2.make.com/5ln8byxwiwj7mtknejixwxsuvmf2y9ji";
         const IDLE_LABEL = "CLAIM YOUR REALM PASS";
+        // What to do when the webhook answers ok but names no tier. "core" is a grace
+        // path: a recognised email still enters Core (never Elite). "deny" fails closed.
+        // Blast radius is stated here on purpose so it is a decision, not an accident.
+        const UNSORTED_PASS = "core";
         const form = document.getElementById("airlock-form");
         const input = document.getElementById("verify-key");
         const button = document.getElementById("airlock-submit");
@@ -696,7 +700,8 @@
           let isElite = declared === "elite" || declared === "both";
           let isCore = isElite || declared === "core";
           if (!declared) {
-            isCore = true;
+            // Tier missing on an otherwise ok answer: honour UNSORTED_PASS above.
+            isCore = UNSORTED_PASS === "core";
             isElite = false;
           }
 
@@ -1061,6 +1066,16 @@
 
         restore();
 
+        // The Elite count in the gate copy follows the live feed, so the promise cannot
+        // go stale as the vault grows. Falls back to the static number if the feed fails.
+        function setEliteCount(count) {
+          if (!count || count < 1) return;
+          document.querySelectorAll("[data-elite-count]").forEach(function (node) {
+            node.textContent = String(count);
+            node.setAttribute("data-elite-count-source", "catalog");
+          });
+        }
+
         fetch("vault_catalog.json?v=feed-136")
           .then(function (response) {
             if (!response.ok) throw new Error("catalog " + response.status);
@@ -1069,6 +1084,7 @@
           .then(function (catalog) {
             renderList("core", catalog.core || []);
             renderList("elite", catalog.elite || []);
+            setEliteCount((catalog.elite || []).length);
           })
           .catch(function () {
             Object.keys(rooms).forEach(function (tier) {
