@@ -563,6 +563,10 @@
         // path: a recognised email still enters Core (never Elite). "deny" fails closed.
         // Blast radius is stated here on purpose so it is a decision, not an accident.
         const UNSORTED_PASS = "core";
+        // A row that exists but sits on the Free tier. "core" keeps them in the Core vault
+        // (the behaviour today); "deny" locks them out and offers the upgrade path.
+        // Same discipline as UNSORTED_PASS: one word, one place, stated on purpose.
+        const FREE_TIER_PASS = "core";
         const form = document.getElementById("airlock-form");
         const input = document.getElementById("verify-key");
         const button = document.getElementById("airlock-submit");
@@ -657,15 +661,22 @@
           ).toLowerCase();
           if (!raw) return "";
           if (raw === "both" || raw === "all") return "both";
-          if (
-            /(initiate)/.test(raw) &&
-            !/(core|elite|breaker|broken|disciple|addict)/.test(raw)
-          ) {
-            return "initiate";
+          // EVERY TIER ABOVE CORE GRANTS BOTH ROOMS. Elite inherits Core, so anything above
+          // Core lands on "elite" here: Elite Breaker ($25), Broken Mind ($50), the
+          // personalized-episode tier ($150) and Goddess's Personal Disciple ($500).
+          // Names first, then the raw price, because the sheet carries both spellings.
+          if (/(elite|vip|breaker|broken|disciple|episode|personali[sz]|premium)/.test(raw)) {
+            return "elite";
           }
-          if (/(elite|breaker|broken|disciple)/.test(raw)) return "elite";
+          if (/\$(25|50|150|500)(?!\d)/.test(raw)) return "elite";
           if (/(core|addict)/.test(raw)) return "core";
-          return raw;
+          if (/\$15(?!\d)/.test(raw)) return "core";
+          // Entry tier: recognised, but no vault. Price form included for messy rows.
+          if (/(initiate)/.test(raw)) return "initiate";
+          if (/\$5(?!\d)/.test(raw)) return "initiate";
+          // A row that exists on the Free tier. FREE_TIER_PASS decides what that is worth.
+          if (/(free|no tier|none)/.test(raw)) return "free";
+          return "";
         }
 
         function isInactivePatron(data) {
@@ -687,9 +698,18 @@
           if (rec && rec.status === "inactive") return false;
           if (!rec && isInactivePatron(data)) return false;
 
-          const declared = rec
+          let declared = rec
             ? namedGrant({ tier: rec.tier || "" })
             : namedGrant(data);
+          if (declared === "free") {
+            if (FREE_TIER_PASS === "deny") {
+              if (window.RealmVaults) window.RealmVaults.reset();
+              result.innerHTML =
+                '<p class="airlock-notice">REALM PASS // CORE OR ABOVE REQUIRED</p>';
+              return true;
+            }
+            declared = "core";
+          }
           if (declared === "initiate") {
             if (window.RealmVaults) window.RealmVaults.reset();
             result.innerHTML =
