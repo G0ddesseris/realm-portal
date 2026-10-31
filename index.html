@@ -566,7 +566,7 @@
         // A row that exists but sits on the Free tier. "core" keeps them in the Core vault
         // (the behaviour today); "deny" locks them out and offers the upgrade path.
         // Same discipline as UNSORTED_PASS: one word, one place, stated on purpose.
-        const FREE_TIER_PASS = "core";
+        const FREE_TIER_PASS = "deny";
         const form = document.getElementById("airlock-form");
         const input = document.getElementById("verify-key");
         const button = document.getElementById("airlock-submit");
