@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Authorization received — Realm of Chaos</title>
+<meta name="robots" content="noindex,nofollow" />
+<meta name="referrer" content="no-referrer" />
+<style>
+  :root { --bg:#0d0c13; --fg:#e9e6f2; --muted:#9c95b0; --line:#2c2838; --accent:#7e22ce; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+  main { max-width:720px; margin:0 auto; padding:60px 22px 90px; }
+  h1 { font-size:26px; margin:0 0 4px; }
+  .stamp { color:var(--muted); font-size:13px; margin-bottom:26px; }
+  .card { background:#17161f; border:1px solid var(--line); border-radius:10px; padding:18px 20px; margin:18px 0; }
+  code, pre { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+  pre { background:#0f0e16; border:1px solid var(--line); border-radius:8px; padding:14px; overflow-wrap:anywhere; white-space:pre-wrap; font-size:13px; }
+  button { background:var(--accent); color:#fff; border:0; border-radius:6px; padding:9px 16px; font-size:14px; cursor:pointer; }
+  .muted { color:var(--muted); font-size:14px; }
+  a { color:#c4a3ff; }
+  .warn { border-left:3px solid #b45309; padding-left:14px; color:#e8d9c0; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Authorization received</h1>
+  <p class="stamp">Realm of Chaos — internal Node 0 tooling</p>
+
+  <div id="error" class="card warn" hidden>
+    <strong>Patreon returned an error.</strong>
+    <pre id="errorText"></pre>
+    <p class="muted">Tell Node 0 what it says, and nothing else needs to change.</p>
+  </div>
+
+  <div id="ok" class="card" hidden>
+    <p>Copy this authorization code and save it on the local machine. It expires quickly, so do it now.</p>
+    <pre id="code"></pre>
+    <button id="copy">Copy code</button>
+    <p class="muted" style="margin-top:14px">
+      Save it into <code>C:\Users\panth\.secrets\patreon_tokens.json</code> as
+      <code>"authorization_code"</code>. Do not paste it into a chat — Node 0 reads the file from disk.
+    </p>
+  </div>
+
+  <div id="none" class="card" hidden>
+    <p>No authorization code or error in this address.</p>
+    <p class="muted">Start the authorization again from Node 0 if you arrived here by accident.</p>
+  </div>
+
+  <p class="muted" style="margin-top:28px">
+    This page stores nothing, sends nothing, and is excluded from search engines. The code stays in your browser
+    until you copy it. <a href="/index.html">Back to the portal</a>
+  </p>
+</main>
+<script>
+  (function () {
+    var p = new URLSearchParams(window.location.search);
+    var code = p.get("code"), err = p.get("error") || p.get("error_description");
+    var ok = document.getElementById("ok"), bad = document.getElementById("error"), none = document.getElementById("none");
+    if (code) {
+      document.getElementById("code").textContent = code;
+      ok.hidden = false;
+      document.getElementById("copy").onclick = function () {
+        navigator.clipboard.writeText(code).then(function () {
+          document.getElementById("copy").textContent = "Copied";
+        });
+      };
+    } else if (err) {
+      document.getElementById("errorText").textContent = err;
+      bad.hidden = false;
+    } else {
+      none.hidden = false;
+    }
+    // keep the code out of the URL bar and out of any history entry
+    if (window.history && window.history.replaceState) {
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  })();
+</script>
+</body>
+</html>
