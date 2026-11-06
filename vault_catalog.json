@@ -1,6 +1,6 @@
 {
   "cdn_base": "https://media.therealmsofchaos.com",
-  "generated_at": "2026-10-29T18:02:43Z",
+  "generated_at": "2026-11-06T15:26:07Z",
   "core": [
     {
       "id": "001",
@@ -953,6 +953,15 @@
       "title": "SVR",
       "cdn_url": "https://media.therealmsofchaos.com/episodes/core/SVR.mp4",
       "bytes": 229967637
+    },
+    {
+      "id": "137",
+      "file_name": "Day 6 - The Deck Doesn't Ask.mp4",
+      "title": "Day 6 - The Deck Doesn't Ask",
+      "product": "Game Engine / episode series frame",
+      "duration": "1:30",
+      "cdn_url": "https://media.therealmsofchaos.com/episodes/core/Day%206%20-%20The%20Deck%20Doesn%27t%20Ask.mp4",
+      "bytes": 168201197
     }
   ],
   "elite": [
