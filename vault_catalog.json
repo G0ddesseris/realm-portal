@@ -1,6 +1,6 @@
 {
  "cdn_base": "https://media.therealmsofchaos.com",
- "generated_at": "2026-11-10T20:27:11Z",
+ "generated_at": "2026-11-11T17:30:39Z",
  "core": [
   {
    "id": "001",
@@ -971,6 +971,13 @@
    "duration": "1:00",
    "cdn_url": "https://media.therealmsofchaos.com/episodes/core/138_DECK_DECIDES.mp4",
    "bytes": 114211319
+  },
+  {
+   "id": "139",
+   "file_name": "139_SISSY_CONFESSIONS.mp4",
+   "title": "SISSY CONFESSIONS",
+   "cdn_url": "https://media.therealmsofchaos.com/episodes/core/139_SISSY_CONFESSIONS.mp4",
+   "bytes": "36427628"
   }
  ],
  "elite": [
