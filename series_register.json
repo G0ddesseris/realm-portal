@@ -1,0 +1,64 @@
+{
+  "generated_at": "2026-11-14T23:59:00-08:00",
+  "purpose": "The back-end marking for series. A catalog entry is one piece; a series is a set of pieces sold as a set once there are enough of them. This file is the set.",
+  "rules": {
+    "catalog_is_flat": "vault_catalog.json holds one row per file. it has no concept of a series and must not be restructured — the front end reads it as a flat list.",
+    "series_lives_here": "series identity, ordering and status live in this file and are stamped ONTO catalog rows as additive flat fields at publish time.",
+    "additive_only": "stamping never renumbers, re-titles or removes a field. a member's bookmark must never break.",
+    "sell_as_series": "false until the episode count is high enough to be worth one price. gathering is not the same as sellable."
+  },
+  "series": [
+    {
+      "series_id": "CD",
+      "name": "COCK DUMB",
+      "tier": "core",
+      "status": "gathering",
+      "format": "auto-scroll card reel · 100 s · 1080x1920 · 60 fps · 6,000 frames",
+      "engine": "Tabletop Game Cards Carousel (Vertical).aep · STYLE_05 reel · 18 media slots",
+      "audio": {
+        "file": "00 Engine Assets/Audio Baseline/Cock Dumb 2020.m4a",
+        "used": "first 100 s of 546 s · fade out 96-100",
+        "rule": "this audio belongs to this series. a different fetish axis gets its own audio, not a re-edit of this one."
+      },
+      "stamp": "TIK / TOK / COCK DUMB · 0.25 s / 0.45 s / 1.05 s · clears at 5.0 s · ffmpeg drawtext",
+      "filename_rule": "episodes/core/epNN.mp4 — neutral on purpose. the brand is on screen, never in a URL.",
+      "episode_plan": {
+        "axis": "cock type",
+        "variants": [
+          { "axis": "trans / trans-cum", "castable_1080_portrait": 27, "status": "shipped" },
+          { "axis": "black / bbc / ebony / qos", "castable_1080_portrait": 7, "status": "not castable yet — blacked is 187 tagged, 21 portrait, 0 qualifying" },
+          { "axis": "white", "castable_1080_portrait": null, "status": "no tag exists. needs a folder before it can be cast" }
+        ],
+        "note": "the new batch is the lever. ask for portrait-native, one folder per cock type, and all three variants open."
+      },
+      "episodes": [
+        {
+          "ep": 1,
+          "file_name": "ep01.mp4",
+          "catalog_id": null,
+          "reserved_catalog_id": "140",
+          "title": "COCK DUMB 01",
+          "bytes": "53106333",
+          "duration_s": 100.0,
+          "cdn_url": "https://media.therealmofchaos.com/episodes/core/ep01.mp4",
+          "sha256_prefix": "56e6e07d158cab25",
+          "local_master": "05_Sitreps_And_Logs/EPISODES/THE_HOLD/DELIVERY/ep01.mp4",
+          "cast_axis": "trans / trans-cum · 18 clips · portrait 1080 · 12-45 s",
+          "status": "uploaded_unpublished",
+          "uploaded_at": "2026-11-14T23:30:00-08:00",
+          "verified": "HTTP 200 · 53,106,333 B match · range 206",
+          "known_defects": ["caps-word ghost from the three-segment text layout", "bottom bleed stays near-black"],
+          "owed": "real AE intro for ep02 — see NEXT_AE_QUEUE.md"
+        }
+      ],
+      "sell_as_series": false,
+      "sell_threshold": "undecided — state a number before it becomes a pricing decision nobody made"
+    }
+  ],
+  "stamped_fields": {
+    "series_id": "CD",
+    "series_name": "COCK DUMB",
+    "series_ep": 1,
+    "series_status": "gathering"
+  }
+}
