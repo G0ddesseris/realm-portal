@@ -1,6 +1,6 @@
 {
  "cdn_base": "https://media.therealmsofchaos.com",
- "generated_at": "2026-11-21T01:43:56Z",
+ "generated_at": "2026-11-21T18:10:37Z",
  "core": [
   {
    "id": "001",
@@ -990,6 +990,13 @@
    "series_ep": 1,
    "series_status": "gathering",
    "series_tier": "core"
+  },
+  {
+   "id": "141",
+   "file_name": "141_YOU_HAVE_10_MINS.mp4",
+   "title": "You Have 10 Mins",
+   "cdn_url": "https://media.therealmsofchaos.com/episodes/core/141_YOU_HAVE_10_MINS.mp4",
+   "bytes": "4411765"
   }
  ],
  "elite": [
