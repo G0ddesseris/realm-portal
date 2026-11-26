@@ -1,64 +1,165 @@
 {
-  "generated_at": "2026-11-14T23:59:00-08:00",
-  "purpose": "The back-end marking for series. A catalog entry is one piece; a series is a set of pieces sold as a set once there are enough of them. This file is the set.",
-  "rules": {
-    "catalog_is_flat": "vault_catalog.json holds one row per file. it has no concept of a series and must not be restructured — the front end reads it as a flat list.",
-    "series_lives_here": "series identity, ordering and status live in this file and are stamped ONTO catalog rows as additive flat fields at publish time.",
-    "additive_only": "stamping never renumbers, re-titles or removes a field. a member's bookmark must never break.",
-    "sell_as_series": "false until the episode count is high enough to be worth one price. gathering is not the same as sellable."
-  },
-  "series": [
+ "generated_at": "2026-11-14T23:59:00-08:00",
+ "purpose": "The back-end marking for series. A catalog entry is one piece; a series is a set of pieces sold as a set once there are enough of them. This file is the set.",
+ "rules": {
+  "catalog_is_flat": "vault_catalog.json holds one row per file. it has no concept of a series and must not be restructured — the front end reads it as a flat list.",
+  "series_lives_here": "series identity, ordering and status live in this file and are stamped ONTO catalog rows as additive flat fields at publish time.",
+  "additive_only": "stamping never renumbers, re-titles or removes a field. a member's bookmark must never break.",
+  "sell_as_series": "false until the episode count is high enough to be worth one price. gathering is not the same as sellable."
+ },
+ "series": [
+  {
+   "series_id": "CD",
+   "name": "COCK DUMB",
+   "tier": "core",
+   "status": "gathering",
+   "format": "auto-scroll card reel · 100 s · 1080x1920 · 60 fps · 6,000 frames",
+   "engine": "Tabletop Game Cards Carousel (Vertical).aep · STYLE_05 reel · 18 media slots",
+   "audio": {
+    "file": "00 Engine Assets/Audio Baseline/Cock Dumb 2020.m4a",
+    "used": "first 100 s of 546 s · fade out 96-100",
+    "rule": "this audio belongs to this series. a different fetish axis gets its own audio, not a re-edit of this one."
+   },
+   "stamp": "TIK / TOK / COCK DUMB · 0.25 s / 0.45 s / 1.05 s · clears at 5.0 s · ffmpeg drawtext",
+   "filename_rule": "episodes/core/epNN.mp4 — neutral on purpose. the brand is on screen, never in a URL.",
+   "episode_plan": {
+    "axis": "cock type",
+    "variants": [
+     {
+      "axis": "trans / trans-cum",
+      "castable_1080_portrait": 27,
+      "status": "shipped"
+     },
+     {
+      "axis": "black / bbc / ebony / qos",
+      "castable_1080_portrait": 7,
+      "status": "not castable yet — blacked is 187 tagged, 21 portrait, 0 qualifying"
+     },
+     {
+      "axis": "white",
+      "castable_1080_portrait": null,
+      "status": "no tag exists. needs a folder before it can be cast"
+     }
+    ],
+    "note": "the new batch is the lever. ask for portrait-native, one folder per cock type, and all three variants open."
+   },
+   "episodes": [
     {
-      "series_id": "CD",
-      "name": "COCK DUMB",
-      "tier": "core",
-      "status": "gathering",
-      "format": "auto-scroll card reel · 100 s · 1080x1920 · 60 fps · 6,000 frames",
-      "engine": "Tabletop Game Cards Carousel (Vertical).aep · STYLE_05 reel · 18 media slots",
-      "audio": {
-        "file": "00 Engine Assets/Audio Baseline/Cock Dumb 2020.m4a",
-        "used": "first 100 s of 546 s · fade out 96-100",
-        "rule": "this audio belongs to this series. a different fetish axis gets its own audio, not a re-edit of this one."
-      },
-      "stamp": "TIK / TOK / COCK DUMB · 0.25 s / 0.45 s / 1.05 s · clears at 5.0 s · ffmpeg drawtext",
-      "filename_rule": "episodes/core/epNN.mp4 — neutral on purpose. the brand is on screen, never in a URL.",
-      "episode_plan": {
-        "axis": "cock type",
-        "variants": [
-          { "axis": "trans / trans-cum", "castable_1080_portrait": 27, "status": "shipped" },
-          { "axis": "black / bbc / ebony / qos", "castable_1080_portrait": 7, "status": "not castable yet — blacked is 187 tagged, 21 portrait, 0 qualifying" },
-          { "axis": "white", "castable_1080_portrait": null, "status": "no tag exists. needs a folder before it can be cast" }
-        ],
-        "note": "the new batch is the lever. ask for portrait-native, one folder per cock type, and all three variants open."
-      },
-      "episodes": [
-        {
-          "ep": 1,
-          "file_name": "ep01.mp4",
-          "catalog_id": null,
-          "reserved_catalog_id": "140",
-          "title": "COCK DUMB 01",
-          "bytes": "53106333",
-          "duration_s": 100.0,
-          "cdn_url": "https://media.therealmofchaos.com/episodes/core/ep01.mp4",
-          "sha256_prefix": "56e6e07d158cab25",
-          "local_master": "05_Sitreps_And_Logs/EPISODES/THE_HOLD/DELIVERY/ep01.mp4",
-          "cast_axis": "trans / trans-cum · 18 clips · portrait 1080 · 12-45 s",
-          "status": "uploaded_unpublished",
-          "uploaded_at": "2026-11-14T23:30:00-08:00",
-          "verified": "HTTP 200 · 53,106,333 B match · range 206",
-          "known_defects": ["caps-word ghost from the three-segment text layout", "bottom bleed stays near-black"],
-          "owed": "real AE intro for ep02 — see NEXT_AE_QUEUE.md"
-        }
-      ],
-      "sell_as_series": false,
-      "sell_threshold": "undecided — state a number before it becomes a pricing decision nobody made"
+     "ep": 1,
+     "file_name": "ep01.mp4",
+     "catalog_id": null,
+     "reserved_catalog_id": "140",
+     "title": "COCK DUMB 01",
+     "bytes": "53106333",
+     "duration_s": 100.0,
+     "cdn_url": "https://media.therealmofchaos.com/episodes/core/ep01.mp4",
+     "sha256_prefix": "56e6e07d158cab25",
+     "local_master": "05_Sitreps_And_Logs/EPISODES/THE_HOLD/DELIVERY/ep01.mp4",
+     "cast_axis": "trans / trans-cum · 18 clips · portrait 1080 · 12-45 s",
+     "status": "uploaded_unpublished",
+     "uploaded_at": "2026-11-14T23:30:00-08:00",
+     "verified": "HTTP 200 · 53,106,333 B match · range 206",
+     "known_defects": [
+      "caps-word ghost from the three-segment text layout",
+      "bottom bleed stays near-black"
+     ],
+     "owed": "real AE intro for ep02 — see NEXT_AE_QUEUE.md"
     }
-  ],
-  "stamped_fields": {
-    "series_id": "CD",
-    "series_name": "COCK DUMB",
-    "series_ep": 1,
-    "series_status": "gathering"
+   ],
+   "sell_as_series": false,
+   "sell_threshold": "undecided — state a number before it becomes a pricing decision nobody made"
+  },
+  {
+   "series_id": "AGAIN",
+   "name": "AGAIN",
+   "tier": "core",
+   "status": "live",
+   "format": "message-thread piece · portrait 1080x1920 62 s / landscape 1920x1080 52 s · MSGPACK overlay",
+   "engine": "MSG_TEST_02.aep · bubble kit at 4K, nested, 70-85% native · landscape needs 75% and lifted (see MSG_LANE_LESSONS)",
+   "audio": {
+    "portrait": "00 Engine Assets/Audio Baseline/…bambi bed (denial register) · 62 s · pings/sends/buzz · tap at the full-frame cut",
+    "landscape": "00 Engine Assets/Audio Baseline/Rimming Your Ass Until You Fall Asleep.m4a · first 52 s +1 dB · fade out 48.5 · ends on black at 52.0",
+    "rule": "one bed per register, never shared across registers; the bed is chosen per piece by Agent 0"
+   },
+   "spine": "8 slots: check-in → count → price → reward → lock → next time. the CLOCK is the series, not the face — cast may change, the count must not",
+   "filename_rule": "episodes/core/againNN.mp4 — neutral on purpose. the brand is on screen, never in a URL.",
+   "episode_plan": {
+    "axis": "the clock (day count / same time tomorrow)",
+    "episodes_shipped": 2,
+    "ep_001": "again01.mp4 · portrait · denial register · 'same time tomorrow'",
+    "ep_002": "again02.mp4 · landscape · rimming/worship register · 'don't shower'",
+    "cadence_target": "2 pieces/day from the week of 24 Nov (Agent 0 ruling, Day 220)"
+   },
+   "added": "2026-11-24T12:35:09-08:00",
+   "episodes": [
+    {
+     "ep": 1,
+     "file_name": "again01.mp4",
+     "catalog_id": 142,
+     "title": "AGAIN? — Same Time Tomorrow",
+     "bytes": 27425761,
+     "duration_s": 62.0,
+     "cdn_url": "https://media.therealmsofchaos.com/episodes/core/again01.mp4",
+     "status": "live",
+     "live_since": "2026-11-25T17:39:48-08:00",
+     "verified": "HTTP 200 · bytes match"
+    },
+    {
+     "ep": 2,
+     "file_name": "again02.mp4",
+     "catalog_id": "144",
+     "title": "AGAIN? — Don't Shower",
+     "bytes": "36450283",
+     "duration_s": 52.0,
+     "cdn_url": "https://media.therealmsofchaos.com/episodes/core/again02.mp4",
+     "status": "live",
+     "live_since": "2026-11-25T17:39:48-08:00",
+     "verified": "HTTP 200 · bytes match"
+    }
+   ],
+   "live_confirmed": "25 Nov 2026 — Agent 0: both pieces are live to members; promo for 02 comes later, do not pull it back"
+  },
+  {
+   "series_id": "LD",
+   "name": "LOADED DECK",
+   "tier": "core",
+   "status": "live",
+   "format": "card game · 16 cards babe/cock alternating · 60 s · 1920x1080 · 60 fps · hero-only text",
+   "engine": "Tabletop Game Cards Carousel.aep (4K master) · STYLE_04 horizontal conveyor · 16 cards bound",
+   "audio": {
+    "file": "00 Engine Assets/Audio Baseline/House Edge.m4a",
+    "used": "from 15.0 s, 60 s, -14.75 LUFS, fade out 57-60",
+    "rule": "casino-hypno bed for the card lanes; reusable across card/jackpot pieces"
+   },
+   "spine": "the strip is the pace — forward, back, faster, slower. hero-only text: one card speaks, neighbours silent and faded. ends on a fade to black",
+   "filename_rule": "episodes/core/NNN_LOADED_DECK_NN.mp4 — numbered; the prefix binds new uploads",
+   "episode_plan": {
+    "axis": "the pick",
+    "episodes_shipped": 1,
+    "ep_001": "142_LOADED_DECK_01.mp4 · 'Pick A' · 16 cards · House Edge bed",
+    "cadence_target": "one every other day — the piece is deliberately short so members return for new cards"
+   },
+   "added": "2026-11-25T17:39:48-08:00",
+   "episodes": [
+    {
+     "ep": 1,
+     "file_name": "142_LOADED_DECK_01.mp4",
+     "catalog_id": "143",
+     "title": "Loaded Deck 01 — Pick A",
+     "bytes": "18766616",
+     "duration_s": 60.0,
+     "cdn_url": "https://media.therealmsofchaos.com/episodes/core/142_LOADED_DECK_01.mp4",
+     "status": "live",
+     "live_since": "2026-11-25T17:39:48-08:00",
+     "verified": "HTTP 200 · bytes match"
+    }
+   ]
   }
+ ],
+ "stamped_fields": {
+  "series_id": "CD",
+  "series_name": "COCK DUMB",
+  "series_ep": 1,
+  "series_status": "gathering"
+ }
 }
