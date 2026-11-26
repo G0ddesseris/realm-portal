@@ -1,6 +1,6 @@
 {
  "cdn_base": "https://media.therealmsofchaos.com",
- "generated_at": "2026-11-24T20:35:09Z",
+ "generated_at": "2026-11-26T01:33:06Z",
  "core": [
   {
    "id": "001",
@@ -1009,6 +1009,20 @@
    "series_ep": 1,
    "series_status": "gathering",
    "series_tier": "core"
+  },
+  {
+   "id": "143",
+   "file_name": "142_LOADED_DECK_01.mp4",
+   "title": "Loaded Deck 01 — Pick A",
+   "cdn_url": "https://media.therealmsofchaos.com/episodes/core/142_LOADED_DECK_01.mp4",
+   "bytes": "18766616"
+  },
+  {
+   "id": "144",
+   "file_name": "again02.mp4",
+   "title": "AGAIN? — Don't Shower",
+   "cdn_url": "https://media.therealmsofchaos.com/episodes/core/again02.mp4",
+   "bytes": "36450283"
   }
  ],
  "elite": [
