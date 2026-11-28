@@ -1,0 +1,19 @@
+{
+ "_note": "rows uploaded to the CDN but NOT yet member-visible. append to vault_catalog.json on the release day, then push. keeps the held-back piece out of a future deploy.",
+ "pending": [
+  {
+   "id": 143,
+   "file_name": "again02.mp4",
+   "title": "AGAIN? — Don't Shower",
+   "bytes": 36450283,
+   "cdn_url": "https://media.therealmsofchaos.com/episodes/core/again02.mp4",
+   "series_id": "AGAIN",
+   "series_name": "AGAIN",
+   "series_ep": 2,
+   "series_status": "gathering",
+   "series_tier": "core",
+   "release": "2026-11-26",
+   "reason": "Thursday piece — Agent 0 staggers Core releases 24 Nov / 26 Nov"
+  }
+ ]
+}
